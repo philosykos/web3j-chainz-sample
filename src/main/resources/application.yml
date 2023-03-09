@@ -1,0 +1,4 @@
+logging:
+    level:
+        root: INFO
+        chainz.web3: DEBUG
