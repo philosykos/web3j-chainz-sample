@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-@FeignClient(name="sksClient", url = "http://localhost:8100")
+@FeignClient(name="sksClient", url = "https://dev-framework.chainz.biz/sks")
 public interface ServerKeyServiceClient {
 
     @PostMapping(value="/accounts")

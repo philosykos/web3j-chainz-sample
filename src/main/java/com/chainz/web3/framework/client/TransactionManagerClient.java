@@ -6,7 +6,7 @@ import com.chainz.web3.framework.dto.TransactionResult;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name="transactionManagerClient", url="http://localhost:8099")
+@FeignClient(name="transactionManagerClient", url="https://dev-utility.chainz.biz/tx-manager")
 public interface TransactionManagerClient {
 
     @PostMapping(value="/transactions")
