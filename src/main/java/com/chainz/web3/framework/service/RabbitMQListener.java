@@ -14,23 +14,23 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class RabbitMQListener {
 
-    private final ObjectMapper objectMapper;
-
-    @RabbitListener(queues = {})
-    public void receiveMessage(final String message) throws Exception {
-        try {
-            log.debug("Receive Queue Message. Message = {}", message);
-            TransactionResult.Message txMessage = objectMapper.readValue(message, Message.class);
-
-            if(txMessage.getTransactionStatus().equals(TransactionStatus.SUCCESS)) {
-                // 성공 처리
-                log.debug("txMessage = {}", txMessage);
-            } else {
-                // 실패 처리
-            }
-        } catch (Exception e) {
-            // 에러 처리
-            throw new Exception(e);
-        }
-    }
+//    private final ObjectMapper objectMapper;
+//
+//    @RabbitListener(queues = {})
+//    public void receiveMessage(final String message) throws Exception {
+//        try {
+//            log.debug("Receive Queue Message. Message = {}", message);
+//            TransactionResult.Message txMessage = objectMapper.readValue(message, Message.class);
+//
+//            if(txMessage.getTransactionStatus().equals(TransactionStatus.SUCCESS)) {
+//                // 성공 처리
+//                log.debug("txMessage = {}", txMessage);
+//            } else {
+//                // 실패 처리
+//            }
+//        } catch (Exception e) {
+//            // 에러 처리
+//            throw new Exception(e);
+//        }
+//    }
 }

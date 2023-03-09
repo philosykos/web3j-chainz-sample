@@ -11,10 +11,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableFeignClients
 @ImportAutoConfiguration({FeignAutoConfiguration.class})
 @EnableScheduling
-public class Web3jTestApplication {
+public class Web3TestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Web3jTestApplication.class, args);
+        SpringApplication.run( Web3TestApplication.class, args);
     }
 
 }
