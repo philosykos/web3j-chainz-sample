@@ -23,7 +23,10 @@ contract Storage {
 1. Swagger UI 경로는 http://localhost:8080/swagger-ui/index.html 입니다. Sample API 목록과 입력 파라미터는 Swagger UI를 통해 확인해주세요.
 2. createAccount API로 Smart Contract 배포에 사용할 계정을 생성합니다.
 3. deployContract API로 Storage Contract를 배포합니다. 다른 Contract를 배포하려면 ChainzFrameworkServiceImpl의 bytecode를 배포하려는 Contract의 bytecode로 변경하세요. 
-4. store API로 Contract의 State를 변경하는 store Transaction을 요청합니다.
+4. store API로 Contract의 State를 변경하는 store Transaction을 요청합니다. Transaction이 정상적으로 처리되었는지 확인하는 방법은 아래 3가지 방법이 있습니다.
+   * getTransactionResult API로 Transaction 처리결과를 조회 (Polling 방식)
+   * RabbitMQ로 처리 결과를 Subcribe (연결 방법은 API 문서 참고)
+   * State를 조회하여 상태변경이 제대로 처리되었는지 확인
 ```java
 Function function = new Function(
     "store", // 호출할 함수명
